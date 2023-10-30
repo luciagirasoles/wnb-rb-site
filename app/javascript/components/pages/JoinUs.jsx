@@ -15,7 +15,7 @@ import { submitLeadForm } from '../../datasources';
 import 'stylesheets/join_us';
 
 const JoinUs = () => {
-    const gtoken = window.gtoken;
+    const gtoken = document.body.getAttribute('data-gtoken');
 
     const initialValues = {
         name: '',

@@ -22,7 +22,12 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
   <%- body_class = 'admin' if controller_name == 'sessions' %>
-  <body class=<%= body_class %>>
+  <body
+  <% if content_for? :gtoken %>
+    <%= yield(:gtoken) %>
+  <% end %>
+  class=<%= body_class %>
+  >
     <%= yield %>
     <div id="root" class="min-w-full">
   </body>
