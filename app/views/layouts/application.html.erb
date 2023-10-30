@@ -26,6 +26,9 @@
   <% if content_for? :gtoken %>
     <%= yield(:gtoken) %>
   <% end %>
+  <% if content_for? :date %>
+    <%= yield(:date) %>
+  <% end %>
   class=<%= body_class %>
   >
     <%= yield %>

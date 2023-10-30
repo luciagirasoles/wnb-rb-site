@@ -16,7 +16,7 @@ const VideoBlock = ({ videoUrl, title }) => {
     }
     return (
         <div className="card-container flex flex-wrap justify-center aspect-w-16 aspect-h-9">
-            <iframe src={videoUrl} title={title} frameBorder="0"></iframe>;
+            <iframe src={videoUrl} title={title} className="border-none"></iframe>;
         </div>
     );
 };
@@ -74,9 +74,9 @@ SpeakerVideoBlock.propTypes = {
 };
 
 const PastMeetup = () => {
-    const year = window.year;
-    const month = window.month;
-    const day = window.day;
+    const year = document.body.getAttribute('data-year');
+    const month = document.body.getAttribute('data-month');
+    const day = document.body.getAttribute('data-day');
     const [loading, setLoading] = useState(true);
     const [meetup, setMeetup] = useState({});
 

@@ -1,7 +1,7 @@
 <%= append_javascript_pack_tag 'past_meetup' %>
 <%= append_stylesheet_pack_tag "past_meetup" %>
-<%= javascript_tag do %>
-  var year = <%= raw(h(params[:year])) %>;
-  var month = <%= raw(h(params[:month])) %>;
-  var day = <%= raw(h(params[:day])) %>;
+<% if @year.present? && @month.present? && @day.present? %>
+  <% content_for :date do %>
+    <%= "data-year=\"#{@year}\" data-month=\"#{@month}\" data-day=\"#{@day}\"".html_safe %>
+  <% end %>
 <% end %>
